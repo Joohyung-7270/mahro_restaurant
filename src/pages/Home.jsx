@@ -342,8 +342,8 @@ function Home() {
                   }}
                   label={{
                     text: "마로상회",
-                    color: "#FFFFFF",
-                    fontSize: "14px",
+                    color: "#000000",
+                    fontSize: "20px",
                     fontWeight: "bold"
                   }}
                 />
