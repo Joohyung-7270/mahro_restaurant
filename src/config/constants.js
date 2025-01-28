@@ -4,10 +4,7 @@ export const CDN_URL = process.env.NODE_ENV === 'production'
 
 // 이미지 URL 생성 함수 수정
 export const getImageUrl = (path) => {
-  // 개발 환경에서는 public 폴더의 이미지를 직접 사용
-  if (!CDN_URL) {
-    return path;
-  }
-  // 프로덕션 환경에서는 CDN URL 사용
-  return `${CDN_URL}${path}`;
+  // 이미지 경로에서 확장자를 제거하고 .webp로 변경
+  const basePath = path.substring(0, path.lastIndexOf('.'));
+  return `${basePath}.webp`;
 }; 

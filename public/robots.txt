@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # 사이트맵 위치
-Sitemap: https://마로상회.com/sitemap.xml
+Sitemap: https://www.mahroh-restaurant.com/sitemap.xml
 
 # 관리자 페이지 차단 (필요한 경우)
 Disallow: /admin/

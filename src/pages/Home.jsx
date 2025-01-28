@@ -337,7 +337,7 @@ function Home() {
                   position={center}
                   title="마로상회"
                   icon={{
-                    url: "http://maps.google.com/mapfiles/ms/icons/red-dot.png",
+                    url: "https://maps.google.com/mapfiles/ms/icons/red-dot.png",
                     scaledSize: { width: 40, height: 40 }
                   }}
                   label={{
