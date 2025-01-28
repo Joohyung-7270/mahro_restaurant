@@ -1,5 +1,7 @@
 import { motion } from 'framer-motion';
 import { MapPinIcon, ClockIcon, HeartIcon } from '@heroicons/react/24/outline';
+import ImageOptimized from '../components/ImageOptimized';
+import { getImageUrl } from '../config/constants';
 
 function About() {
   return (
@@ -7,9 +9,9 @@ function About() {
       {/* 히어로 섹션 */}
       <div className="relative h-[60vh] min-h-[400px]">
         <div className="absolute inset-0">
-          <img 
-            src="/interior1.JPG" 
-            alt="마로상회 내부" 
+          <ImageOptimized
+            src={getImageUrl('/interior1.JPG')}
+            alt="마로상회 내부"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-black/40" />
@@ -95,34 +97,28 @@ function About() {
           </div>
 
           {/* 갤러리 섹션 */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-            className="grid grid-cols-1 md:grid-cols-2 gap-8"
-          >
+          <motion.div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="space-y-8">
-              <img 
-                src="/interior1.JPG" 
-                alt="내부 전경 1" 
+              <ImageOptimized
+                src={getImageUrl('/interior1.JPG')}
+                alt="내부 전경 1"
                 className="w-full h-80 object-cover rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300"
               />
-              <img 
-                src="/out1.jpg" 
-                alt="외부 전경" 
+              <ImageOptimized
+                src={getImageUrl('/out1.jpg')}
+                alt="외부 전경"
                 className="w-full h-80 object-cover rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300"
               />
             </div>
             <div className="space-y-8 mt-8 md:mt-16">
-              <img 
-                src="/interior2.jpg" 
-                alt="내부 전경 2" 
+              <ImageOptimized
+                src={getImageUrl('/interior2.jpg')}
+                alt="내부 전경 2"
                 className="w-full h-80 object-cover rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300"
               />
-              <img 
-                src="/out4.jpg" 
-                alt="외부 전경 2" 
+              <ImageOptimized
+                src={getImageUrl('/out4.jpg')}
+                alt="외부 전경 2"
                 className="w-full h-80 object-cover rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300"
               />
             </div>

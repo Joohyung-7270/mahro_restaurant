@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FireIcon, SparklesIcon } from '@heroicons/react/24/outline';
+import ImageOptimized from '../components/ImageOptimized';
+import { getImageUrl } from '../config/constants';
 
 function Menu() {
   const [activeCategory, setActiveCategory] = useState('현장식사');
@@ -13,14 +15,14 @@ function Menu() {
         name: '한우 우거지탕',
         price: 10000,
         description: '신선한 한우와 우거지를 넣고 푹 끓인 건강식',
-        image: '/foodcow_in.JPG',
+        image: getImageUrl('/foodcow_in.JPG'),
         isSignature: true
       },
       {
         name: '부대찌개',
         price: 11000,
         description: '2인 이상 주문 가능',
-        image: '/ham1.jpg',
+        image: getImageUrl('/ham1.jpg'),
         isSignature: true
       }
     ],
@@ -28,17 +30,17 @@ function Menu() {
       {
         name: '음료수',
         price: 2000,
-        image: '/drink.jpg'
+        image: getImageUrl('/drink.jpg')
       },
       {
         name: '라면사리',
         price: 1000,
-        image: '/noodles.jpg'
+        image: getImageUrl('/noodles.jpg')
       },
       {
         name: '모둠 햄사리',
         price: 6000,
-        image: '/ham1.jpg'
+        image: getImageUrl('/ham1.jpg')
       }
     ],
     '포장': [
@@ -46,13 +48,13 @@ function Menu() {
         name: '한우우거지탕',
         price: 16000,
         description: '포장용기 포함',
-        image: '/foodcow_in.JPG'
+        image: getImageUrl('/foodcow_in.JPG')
       },
       {
         name: '부대찌개',
         price: 16000,
         description: '포장용기 포함',
-        image: '/ham1.jpg'
+        image: getImageUrl('/ham1.jpg')
       }
     ]
   };
@@ -62,9 +64,9 @@ function Menu() {
       {/* 히어로 섹션 */}
       <div className="relative h-[60vh] min-h-[400px]">
         <div className="absolute inset-0">
-          <img 
-            src="/foodcow_in.JPG" 
-            alt="대표 메뉴" 
+          <ImageOptimized
+            src={getImageUrl('/foodcow_in.JPG')}
+            alt="대표 메뉴"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-black/40" />
@@ -117,9 +119,9 @@ function Menu() {
                   className="group"
                 >
                   <div className="relative overflow-hidden rounded-2xl shadow-lg bg-white">
-                    <div className="aspect-w-16 aspect-h-12">
-                      <img 
-                        src={item.image} 
+                    <div className="relative overflow-hidden rounded-2xl aspect-w-16 aspect-h-12">
+                      <ImageOptimized
+                        src={item.image}
                         alt={item.name}
                         className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
                       />
